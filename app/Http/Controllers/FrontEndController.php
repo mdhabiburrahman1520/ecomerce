@@ -8,6 +8,8 @@ use App\Product;
 
 use App\Posts;
 
+use Session;
+
 use App\Category;
 
 class FrontEndController extends Controller
@@ -33,7 +35,16 @@ class FrontEndController extends Controller
     }
     
     public function checkout(){
-    
+       
+        if(!Session::has('client')){
+
+            return redirect()->route('login.user');
+         }
+      
+          if(!Session::has('cart')){
+      
+             return redirect()->back();
+          }
        return view('checkout'); 
     }
 

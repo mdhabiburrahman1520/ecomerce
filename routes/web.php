@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/' ,  [
-    'uses' => 'Controller@welcome',
+Route::get('/' ,[
+    'uses' => 'FrontEndController@welcome',
     'as' => 'welcome'
 ]);
 
