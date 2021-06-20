@@ -237,7 +237,7 @@
       
       
    
-      <script src="{{(asset(''))}}js/script.js"></script>
+      <script src="{{(asset(''))}}/js/script.js"></script>
       <script src="js/owl.js"></script>
       <script src="js/code.js"></script>
       <script src="js/slick.js"></script>

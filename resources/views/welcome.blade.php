@@ -29,7 +29,83 @@
             </a>
           </div>
           <br>
+          <div class="section4">
+        <div class="shopcatg">
+            <p>Shop by catagory</p>
+        </div>
+         <br>
+         <div class="container">
 
+            <section id="container">
+                <div class="row">
+                    
+                  <div class="large-12 columns">
+                    <div class="owl-carousel owl-theme">
+                      <div class="item">
+                        <div class="catagory-top">
+                     
+                            <img class="catagoryimg" src="images/furits.jpg" alt="">
+                         <div class="catname"> <p >furits</p> </div> 
+                    </div>
+                      </div>
+                      <div class="item">
+                        <div class="catagory-top">
+                     
+                            <img class="catagoryimg" src="images/veg.jpg" alt="">
+                         <div class="catname"> <p >vegitable</p> </div> 
+                    </div>
+                      </div>
+                      <div class="item">
+                        <div class="catagory-top">
+                     
+                            <img class="catagoryimg" src="images/fession.jpg" alt="">
+                         <div class="catname"> <p >fession</p> </div> 
+                    </div>
+                      </div>
+                      <div class="item">
+                        <div class="catagory-top">
+                     
+                            <img class="catagoryimg" src="images/toy.jpg" alt="">
+                         <div class="catname"> <p >toys</p> </div> 
+                    </div>
+                      </div>
+                      <div class="item">
+                        <h4>5</h4>
+                      </div>
+                      <div class="item">
+                        <h4>6</h4>
+                      </div>
+                      <div class="item">
+                        <h4>7</h4>
+                      </div>
+                      <div class="item">
+                        <h4>8</h4>
+                      </div>
+                      <div class="item">
+                        <h4>9</h4>
+                      </div>
+                      <div class="item">
+                        <h4>10</h4>
+                      </div>
+                      <div class="item">
+                        <h4>11</h4>
+                      </div>
+                      <div class="item">
+                        <h4>12</h4>
+                      </div>
+                    </div>
+                    
+     
+    
+              </div>
+            </div>
+                
+        </section>
+
+         </div>
+      
+
+</div>
           <!----------------------product slider---------------------->
           <div class="container-fluid">
             <div id="productSlider" class="carousel slide" data-ride="carousel">
@@ -105,20 +181,22 @@
         <div class="container" >
           <br>
           <div class="row slider">
-       
+          @if($products->count()>0)
+                   
+            @foreach($products as $product)
            <div class="col-md-3 col-sm-6">
              <div class="product-grid">
                  <div class="product-image">
                      <a href="#" class="image">
-                         <img class="pic-1" src="images/download.jpg">
-                         <img class="pic-2" src="images/dove.jpg">
+                         <img class="pic-1" src="{{ asset('/'. $product->image) }}">
+                              <img class="pic-2" src="{{ asset('/'. $product->image) }}">
                      </a>
                      <span class="product-discount-label">-40%</span>
                      <ul class="product-links">
                          <li><a href="#" data-tip="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
                          <li><a href="#" data-tip="Compare"><i class="fa fa-random"></i></a></li>
                          <li><a href="card.html" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                         <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-bag"></i></a></li>
+                         <li><a href="{{route('cart.add',['id'=>$product->id])}}" data-tip="Add to Cart"><i class="fa fa-shopping-bag"></i></a></li>
                      </ul>
                  </div>
                  <div class="product-content">
@@ -129,102 +207,19 @@
                          <li class="fas fa-star"></li>
                          <li class="fas fa-star"></li>
                      </ul>
-                     <h3 class="title"><a href="#">Dove sope</a></h3>
-                     <div class="price"><span>$100.00</span> $60.00</div>
+                     <h3 class="title"><a href="#">{{$product->name}}</a></h3>
+                     <div class="price"><span>${{$product->price}}</span></div>
                  </div>
              </div>
            </div>
-       
-         <div class="col-md-3 col-sm-6">
-           <div class="product-grid">
-               <div class="product-image">
-                   <a href="#" class="image">
-                       <img class="pic-1" src="images/fogg1.jpg">
-                       <img class="pic-2" src="images/fogg1.jpg">
-                   </a>
-                   <span class="product-discount-label">-40%</span>
-                   <ul class="product-links">
-                       <li><a href="#" data-tip="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
-                       <li><a href="#" data-tip="Compare"><i class="fa fa-random"></i></a></li>
-                       <li><a href="#" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                       <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-bag"></i></a></li>
-                   </ul>
-               </div>
-               <div class="product-content">
-                   <ul class="rating">
-                       <li class="fas fa-star"></li>
-                       <li class="fas fa-star"></li>
-                       <li class="fas fa-star"></li>
-                       <li class="fas fa-star"></li>
-                       <li class="fas fa-star"></li>
-                   </ul>
-                   <h3 class="title"><a href="#">Dove sope</a></h3>
-                   <div class="price"><span>$100.00</span> $60.00</div>
-               </div>
-           </div>
-         </div>
-       
-       <div class="col-md-3 col-sm-6">
-         <div class="product-grid">
-             <div class="product-image">
-                 <a href="#" class="image">
-                     <img class="pic-1" src="images/flower.jpg">
-                     <img class="pic-2" src="images/flower2.jpg">
-                 </a>
-                 <span class="product-discount-label">-40%</span>
-                 <ul class="product-links">
-                     <li><a href="#" data-tip="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
-                     <li><a href="#" data-tip="Compare"><i class="fa fa-random"></i></a></li>
-                     <li><a href="#" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                     <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-bag"></i></a></li>
-                 </ul>
-             </div>
-             <div class="product-content">
-                 <ul class="rating">
-                     <li class="fas fa-star"></li>
-                     <li class="fas fa-star"></li>
-                     <li class="fas fa-star"></li>
-                     <li class="fas fa-star"></li>
-                     <li class="fas fa-star"></li>
-                 </ul>
-                 <h3 class="title"><a href="#">Dove sope</a></h3>
-                 <div class="price"><span>$100.00</span> $60.00</div>
-             </div>
-         </div>
-       </div>
-             
-    
-       <div class="col-md-3 col-sm-6">
-         <div class="product-grid">
-             <div class="product-image">
-                 <a href="#" class="image">
-                     <img class="pic-1" src="images/lux.jpeg">
-                     <img class="pic-2" src="images/dove.jpg">
-                 </a>
-                 <span class="product-discount-label">-40%</span>
-                 <ul class="product-links">
-                     <li><a href="#" data-tip="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
-                     <li><a href="#" data-tip="Compare"><i class="fa fa-random"></i></a></li>
-                     <li><a href="#" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                     <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-bag"></i></a></li>
-                 </ul>
-             </div>
-             <div class="product-content">
-                 <ul class="rating">
-                     <li class="fas fa-star"></li>
-                     <li class="fas fa-star"></li>
-                     <li class="fas fa-star"></li>
-                     <li class="fas fa-star"></li>
-                     <li class="fas fa-star"></li>
-                 </ul>
-                 <h3 class="title"><a href="#">Dove sope</a></h3>
-                 <div class="price"><span>$100.00</span> $60.00</div>
-             </div>
-         </div>
-       </div>
-       
-          </div>
-        </div>
+           @endforeach
+                
+                @else
+                    <tr>
+                    		<th colspan="5" class="text-center">No Products Yet..</th>
+                    </tr>
+                 @endif   
+        </div>  
        
        </div>
 </div>
@@ -603,9 +598,6 @@
             <p>Shop by category</p>
         </div>
          <br>
-      
-
-            
          <div class="container">
 
 <section id="container">
@@ -659,8 +651,6 @@
             <h4>12</h4>
           </div>
         </div>
-        
-
 
   </div>
 </div>

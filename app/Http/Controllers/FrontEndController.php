@@ -33,7 +33,10 @@ class FrontEndController extends Controller
     }  
     public function welcome(){
         $categories = Category::all();
-       return view('welcome')->with('categories',$categories); 
+        $products = Product::all();
+       return view('welcome')
+       ->with('categories',$categories)
+       ->with('products',$products); 
     }
     
     public function checkout(){
