@@ -47,9 +47,9 @@
                 </li>
 
                 <li>
-                    <a href="{{route('post.index')}}">
-                        <span class="ti-user"></span>
-                        <span>Logout</span>
+                    <a href="{{route('order.index')}}">
+                        <span class="ti-layout-grid2-alt"></span>
+                        <span>Orders</span>
                     </a>
                     
                 </li>

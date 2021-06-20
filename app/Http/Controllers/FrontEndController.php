@@ -8,6 +8,8 @@ use App\Product;
 
 use App\Posts;
 
+use App\Order;
+
 use Session;
 
 use App\Category;
@@ -47,7 +49,19 @@ class FrontEndController extends Controller
           }
        return view('checkout'); 
     }
+    public function orders(){
 
+        $orders = Order::all();
+
+        $orders->transform(function ($order,$key){
+                   
+              $order->cart = unserialize($order->cart);
+
+              return $order;
+        });
+
+        return view('admin.orders.index')->with('orders',$orders);
+    }
 
     public function login(){
         return view('login');

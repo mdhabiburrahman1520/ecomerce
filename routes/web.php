@@ -195,7 +195,20 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
         'as' => 'message.index'
     ]);
 
-    
+    Route::get('/orders',[
+ 
+        'uses'=>'FrontEndController@orders',
+          
+        'as'  =>'order.index'
+      ]);
+
+      Route::get('/view/pdf/{id}',[
+ 
+        'uses'=>'pdfController@viewPdf',
+          
+        'as'  =>'view.pdf'
+       ]);
+
 });
 
 //message
